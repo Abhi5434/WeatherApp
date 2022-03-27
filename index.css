@@ -1,0 +1,132 @@
+*{  
+    padding: 0;  
+    margin: 0;  
+    box-sizing: border-box;  
+    -webkit-font-smoothing: antialiased;  
+  }  
+  body{  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    height: 100vh;  
+    margin: 0;  
+    background: rgb(41, 39, 39);  
+    font-family: 'Open Sans', sans-serif;  
+    background-image: url(https://source.unsplash.com/random/1600x900/?landscape); 
+  }  
+  Homecoding with random
+  Weather App Using html Css And Javascript - Codewithrandom
+  Akshat SMarch 15, 20220 Comments
+  Weather App Using html Css And Javascript - Codewithrandom
+  Weather App Using html Css And Javascript - Codewithrandom
+  
+  
+  Welcome back to the kitchen guys! The year’s coming to an end and it’s the Arctic outside! So before frostnip renders us unable to do anything, let’s end the year with another awesome yet simple cuisine. Today, we’re going to make a real-time weather update website! It will give us the weather details of the city entered along with a beautiful picture of the city. So, take off your gloves, and let’s get right into it!
+  
+  Before I go off showing you the code, I need to tell you about my code editor and trust me VS Code did NOT pay me for the promotion I just love it so much that I HAVE to recommend it. VS Code is one of the best IDEs, with so many extensions and cool features that will make your coding process smooth and you’ll just glide through it. So, use it if you have it or download it from here.
+  
+  
+   
+  
+  Let’s begin with making a search bar, to enter the city, and a div to give the output. I made an HTML file and named it ‘index.html’, you can choose the name as per your wish. In it goes the following piece of code:
+  
+   <!DOCTYPE html>  
+   <html lang="en">  
+   <head>  
+     <meta charset="UTF-8">  
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+     <title>Weather App</title>  
+     <link rel="stylesheet" href="./styles.css">  
+     <script src="./script.js" defer></script>  
+     <link rel="preconnect" href="https://fonts.googleapis.com">  
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">  
+   </head>  
+   <body>  
+     <div class="card">  
+       <div class="search">  
+         <input type="text" class="search-bar" placeholder="Search">  
+         <button>  
+           <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"></path></svg>  
+         </button>  
+       </div>  
+       <div class="weather loading">  
+         <h2 class="city">Weather in Delhi</h2>  
+         <h1 class="temp">13°C</h1>   
+         <div class="description">Cloudy</div>  
+         <div class="humidity">Humid</div>  
+         <div class="wind">Fast</div>  
+       </div>  
+     </div>  
+   </body>  
+   </html>  
+  
+   *{  
+     padding: 0;  
+     margin: 0;  
+     box-sizing: border-box;  
+     -webkit-font-smoothing: antialiased;  
+   }  
+   body{  
+     display: flex;  
+     justify-content: center;  
+     align-items: center;  
+     height: 100vh;  
+     margin: 0;  
+     background: rgb(41, 39, 39);  
+     font-family: 'Open Sans', sans-serif;  
+     background-image: url(https://source.unsplash.com/random/1600x900/?landscape); 
+   }  
+   .card{  
+     background: rgba(0, 0, 0, 0.884);  
+     color: white;  
+     padding: 1.5rem;  
+     border-radius: 30px;  
+     width: 100%;  
+     max-width: 420px;  
+     margin: 1rem;  
+   }  
+   .search{  
+     display: flex;  
+     align-items: center;  
+     justify-content: center;  
+   }  
+   .search button{  
+     margin: 1rem;  
+     border-radius: 50%;  
+     border: none;  
+     height: 2.5rem;  
+     width: 2.5rem;  
+     outline: none;  
+     background-color: rgba(92, 88, 88, 0.644);  
+     color: white;  
+   }  
+   .search button:hover{  
+     background-color: rgb(92, 88, 88);  
+     cursor: pointer;  
+     transition: 0.2s ease-in-out;  
+   }  
+   input.search-bar {  
+     border: none;  
+     outline: none;  
+     padding: 1rem 1rem;  
+     border-radius: 50px;  
+     width: 15rem;  
+     height: 2.5rem;  
+     background-color: rgba(92, 88, 88, 0.644);  
+     color: white;  
+     font-family: inherit;  
+     font-size: 100%;  
+   }  
+   .description{  
+     text-transform: capitalize;  
+   } 
+   .loading{  
+    visibility: hidden;  
+  }  
+  .loading::after{  
+    visibility: visible;  
+    content: "Loading...";  
+    color: white;  
+  }  
